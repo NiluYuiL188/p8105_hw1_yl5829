@@ -359,12 +359,12 @@ display: none;
 
 <div id="r-markdown" class="section level2">
 <h2>R Markdown</h2>
-<p>Problem 1</p>
+<p>Problem 1:</p>
 <pre class="r"><code>options(repos = c(CRAN = &quot;https://cloud.r-project.org&quot;))
 install.packages(&quot;palmerpenguins&quot;)</code></pre>
 <pre><code>## 
 ## The downloaded binary packages are in
-##  /var/folders/ks/1_p5gn3d427__sfxsb8ljphc0000gn/T//Rtmpic7GOj/downloaded_packages</code></pre>
+##  /var/folders/ks/1_p5gn3d427__sfxsb8ljphc0000gn/T//RtmpMvbvB1/downloaded_packages</code></pre>
 <pre class="r"><code>data(&quot;penguins&quot;, package = &quot;palmerpenguins&quot;)</code></pre>
 <pre class="r"><code>#see the row and columb components of the data &quot;penguins&quot;
 penguins</code></pre>
@@ -417,21 +417,21 @@ factor_vector &lt;- factor(rep(c(&quot;Level 1&quot;, &quot;Level 2&quot;, &quot
 combine &lt;- data.frame(random_sample, logical, cha_vector, factor_vector)
 combine</code></pre>
 <pre><code>##    random_sample logical cha_vector factor_vector
-## 1     0.21034862    TRUE          a       Level 1
-## 2    -0.83530898   FALSE          b       Level 2
-## 3    -0.67131796   FALSE          c       Level 3
-## 4    -0.05497006   FALSE          d       Level 1
-## 5     0.75856957    TRUE          e       Level 2
-## 6     1.49233310    TRUE          f       Level 3
-## 7    -1.07473967   FALSE          g       Level 1
-## 8    -0.25276717   FALSE          h       Level 2
-## 9     0.54739158    TRUE          i       Level 3
-## 10    0.94480461    TRUE          j       Level 1</code></pre>
+## 1     -0.1934932   FALSE          a       Level 1
+## 2      0.5232870    TRUE          b       Level 2
+## 3     -0.9897443   FALSE          c       Level 3
+## 4     -0.3102636   FALSE          d       Level 1
+## 5      1.2596507    TRUE          e       Level 2
+## 6     -1.4814823   FALSE          f       Level 3
+## 7      0.3360291    TRUE          g       Level 1
+## 8     -1.2143752   FALSE          h       Level 2
+## 9      0.1193127    TRUE          i       Level 3
+## 10    -0.8031226   FALSE          j       Level 1</code></pre>
 <pre class="r"><code>#compute the mean
 mean(combine$random_sample)</code></pre>
-<pre><code>## [1] 0.1064344</code></pre>
+<pre><code>## [1] -0.2754202</code></pre>
 <pre class="r"><code>mean(combine$logical)</code></pre>
-<pre><code>## [1] 0.5</code></pre>
+<pre><code>## [1] 0.4</code></pre>
 <pre class="r"><code>mean(combine$cha_vector)</code></pre>
 <pre><code>## Warning in mean.default(combine$cha_vector): argument is not numeric or
 ## logical: returning NA</code></pre>
@@ -444,7 +444,7 @@ mean(combine$random_sample)</code></pre>
 random sampel and logical vector work.</p>
 <pre class="r"><code>#Aplly as.numeric to logical, character, and factor
 as.numeric(combine$logical)</code></pre>
-<pre><code>##  [1] 1 0 0 0 1 1 0 0 1 1</code></pre>
+<pre><code>##  [1] 0 1 0 0 1 0 1 0 1 0</code></pre>
 <pre class="r"><code>as.numeric(combine$cha_vector)</code></pre>
 <pre><code>## Warning: NAs introduced by coercion</code></pre>
 <pre><code>##  [1] NA NA NA NA NA NA NA NA NA NA</code></pre>

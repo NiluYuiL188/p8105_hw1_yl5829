@@ -11,7 +11,7 @@ library(tidyverse)
 ```
 
 ## R Markdown
-Problem 1
+Problem 1:
 
 ```{r}
 options(repos = c(CRAN = "https://cloud.r-project.org"))
