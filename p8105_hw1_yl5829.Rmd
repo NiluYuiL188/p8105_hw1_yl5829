@@ -2,7 +2,7 @@
 title: "p8105_hw1_yl5829"
 author: "Yulin Liu"
 date: "2024-09-21"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
@@ -11,11 +11,10 @@ library(tidyverse)
 ```
 
 ## R Markdown
-Problem 1:
+# Problem 1:
 
 ```{r}
-options(repos = c(CRAN = "https://cloud.r-project.org"))
-install.packages("palmerpenguins")
+#options(repos = c(CRAN = "https://cloud.r-project.org"))
 ```
 
 ```{r}
@@ -23,8 +22,9 @@ data("penguins", package = "palmerpenguins")
 ```
 
 ```{r}
-#see the row and columb components of the data "penguins"
+#see the row and column components of the data "penguins"
 penguins
+names(penguins)
 ```
 
 The data contains 8 columns: Species, island, bill_length_ in mm_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex, year.
@@ -49,7 +49,7 @@ ncol(penguins)
 mean(penguins$flipper_length_mm, na.rm = TRUE)
 ```
 
-Problem2:
+# Problem 2:
 ```{r}
 #random sample of size 10 in standard Normal distribution
 random_sample <- rnorm(10)
@@ -63,24 +63,24 @@ factor_vector <- factor(rep(c("Level 1", "Level 2", "Level 3"), length.out = 10)
 
 ```{r}
 #combine all the data
-combine <- data.frame(random_sample, logical, cha_vector, factor_vector)
+combine <- tibble(random_sample, logical, cha_vector, factor_vector)
 combine
 ```
 
 ```{r}
 #compute the mean
-mean(combine$random_sample)
-mean(combine$logical)
-mean(combine$cha_vector)
-mean(combine$factor_vector)
+mean(pull(combine, random_sample))
+mean(pull(combine, logical))
+mean(pull(combine, cha_vector))
+mean(pull(combine, factor_vector))
 ```
 It seems like character vector and factor vector are not work while random sampel and logical vector work.
 
 ```{r}
 #Aplly as.numeric to logical, character, and factor
-as.numeric(combine$logical)
-as.numeric(combine$cha_vector)
-as.numeric(combine$factor_vector)
+as.numeric(pull(combine, logical))
+as.numeric(pull(combine, cha_vector))
+as.numeric(pull(combine, factor_vector))
 ```
 The as.numeric turn the value in logical vector from TURE/FALSE to 1/0, and this is why the mean is working in logical vector as it compute the proportion of TURE
 The as.numeric convert NA in character vector because character cannot be directly transfer into numbers, and that's why the mean failed
