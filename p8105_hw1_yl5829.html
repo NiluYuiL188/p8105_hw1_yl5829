@@ -364,7 +364,7 @@ display: none;
 install.packages(&quot;palmerpenguins&quot;)</code></pre>
 <pre><code>## 
 ## The downloaded binary packages are in
-##  /var/folders/ks/1_p5gn3d427__sfxsb8ljphc0000gn/T//Rtmp4KD6dk/downloaded_packages</code></pre>
+##  /var/folders/ks/1_p5gn3d427__sfxsb8ljphc0000gn/T//Rtmpic7GOj/downloaded_packages</code></pre>
 <pre class="r"><code>data(&quot;penguins&quot;, package = &quot;palmerpenguins&quot;)</code></pre>
 <pre class="r"><code>#see the row and columb components of the data &quot;penguins&quot;
 penguins</code></pre>
@@ -386,13 +386,14 @@ penguins</code></pre>
 <p>The data contains 8 columns: Species, island, bill_length_ in mm_mm,
 bill_depth_mm, flipper_length_mm, body_mass_g, sex, year. The species
 introduce what type of species the penguins is (Adélie, Chinstrap and
-Gentoo). The island introduce which island the penguin is living on.
-(Biscoe, Dream or Torgersen) The bill_length_mm denote to bill length in
-millimeters. The bill_depth_mm denote to bill depth in millimeters. The
-flipper_length_mm denote to an flipper length in millimeters. The body
-mass denote to the weight of penguin in grams. The sex meaning the sex
-of penguin (female, male) The year denote the year when the study
-started (2007, 2008, or 2009)</p>
+Gentoo). factor The island introduce which island the penguin is living
+on. (Biscoe, Dream or Torgersen). factor The bill_length_mm denote to
+bill length in millimeters. numeric The bill_depth_mm denote to bill
+depth in millimeters. numeric The flipper_length_mm denote to an flipper
+length in millimeters. integer The body mass denote to the weight of
+penguin in grams. integer The sex meaning the sex of penguin (female,
+male). factor The year denote the year when the study started (2007,
+2008, or 2009). integer</p>
 <pre class="r"><code>#the size of penguins dataset
 #number of rows
 nrow(penguins)</code></pre>
@@ -416,21 +417,21 @@ factor_vector &lt;- factor(rep(c(&quot;Level 1&quot;, &quot;Level 2&quot;, &quot
 combine &lt;- data.frame(random_sample, logical, cha_vector, factor_vector)
 combine</code></pre>
 <pre><code>##    random_sample logical cha_vector factor_vector
-## 1     -0.6360200   FALSE          a       Level 1
-## 2      0.2032417    TRUE          b       Level 2
-## 3     -2.2849522   FALSE          c       Level 3
-## 4     -0.9806036   FALSE          d       Level 1
-## 5      0.2575961    TRUE          e       Level 2
-## 6      0.9468115    TRUE          f       Level 3
-## 7     -0.7615773   FALSE          g       Level 1
-## 8     -0.5816578   FALSE          h       Level 2
-## 9     -1.1426190   FALSE          i       Level 3
-## 10     0.9278117    TRUE          j       Level 1</code></pre>
+## 1     0.21034862    TRUE          a       Level 1
+## 2    -0.83530898   FALSE          b       Level 2
+## 3    -0.67131796   FALSE          c       Level 3
+## 4    -0.05497006   FALSE          d       Level 1
+## 5     0.75856957    TRUE          e       Level 2
+## 6     1.49233310    TRUE          f       Level 3
+## 7    -1.07473967   FALSE          g       Level 1
+## 8    -0.25276717   FALSE          h       Level 2
+## 9     0.54739158    TRUE          i       Level 3
+## 10    0.94480461    TRUE          j       Level 1</code></pre>
 <pre class="r"><code>#compute the mean
 mean(combine$random_sample)</code></pre>
-<pre><code>## [1] -0.4051969</code></pre>
+<pre><code>## [1] 0.1064344</code></pre>
 <pre class="r"><code>mean(combine$logical)</code></pre>
-<pre><code>## [1] 0.4</code></pre>
+<pre><code>## [1] 0.5</code></pre>
 <pre class="r"><code>mean(combine$cha_vector)</code></pre>
 <pre><code>## Warning in mean.default(combine$cha_vector): argument is not numeric or
 ## logical: returning NA</code></pre>
@@ -443,7 +444,7 @@ mean(combine$random_sample)</code></pre>
 random sampel and logical vector work.</p>
 <pre class="r"><code>#Aplly as.numeric to logical, character, and factor
 as.numeric(combine$logical)</code></pre>
-<pre><code>##  [1] 0 1 0 0 1 1 0 0 0 1</code></pre>
+<pre><code>##  [1] 1 0 0 0 1 1 0 0 1 1</code></pre>
 <pre class="r"><code>as.numeric(combine$cha_vector)</code></pre>
 <pre><code>## Warning: NAs introduced by coercion</code></pre>
 <pre><code>##  [1] NA NA NA NA NA NA NA NA NA NA</code></pre>

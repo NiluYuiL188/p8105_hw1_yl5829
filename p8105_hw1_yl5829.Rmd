@@ -28,14 +28,14 @@ penguins
 ```
 
 The data contains 8 columns: Species, island, bill_length_ in mm_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex, year.
-The species introduce what type of species the penguins is (Adélie, Chinstrap and Gentoo).
-The island introduce which island the penguin is living on. (Biscoe, Dream or Torgersen)
-The bill_length_mm denote to bill length in millimeters.
-The bill_depth_mm denote to bill depth in millimeters.
-The flipper_length_mm denote to an flipper length in millimeters.
-The body mass denote to the weight of penguin in grams.
-The sex meaning the sex of penguin (female, male)
-The year denote the year when the study started (2007, 2008, or 2009)
+The species introduce what type of species the penguins is (Adélie, Chinstrap and Gentoo). factor
+The island introduce which island the penguin is living on. (Biscoe, Dream or Torgersen). factor
+The bill_length_mm denote to bill length in millimeters. numeric
+The bill_depth_mm denote to bill depth in millimeters. numeric
+The flipper_length_mm denote to an flipper length in millimeters. integer
+The body mass denote to the weight of penguin in grams. integer
+The sex meaning the sex of penguin (female, male). factor
+The year denote the year when the study started (2007, 2008, or 2009). integer
 
 
 ```{r}
