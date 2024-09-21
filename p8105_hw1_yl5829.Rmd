@@ -1,0 +1,88 @@
+---
+title: "p8105_hw1_yl5829"
+author: "Yulin Liu"
+date: "2024-09-21"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+## R Markdown
+Problem 1
+
+```{r}
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+install.packages("palmerpenguins")
+```
+
+```{r}
+data("penguins", package = "palmerpenguins")
+```
+
+```{r}
+#see the row and columb components of the data "penguins"
+penguins
+```
+
+The data contains 8 columns: Species, island, bill_length_ in mm_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex, year.
+The species introduce what type of species the penguins is (Adélie, Chinstrap and Gentoo).
+The island introduce which island the penguin is living on. (Biscoe, Dream or Torgersen)
+The bill_length_mm denote to bill length in millimeters.
+The bill_depth_mm denote to bill depth in millimeters.
+The flipper_length_mm denote to an flipper length in millimeters.
+The body mass denote to the weight of penguin in grams.
+The sex meaning the sex of penguin (female, male)
+The year denote the year when the study started (2007, 2008, or 2009)
+
+
+```{r}
+#the size of penguins dataset
+#number of rows
+nrow(penguins)
+#number of columns
+ncol(penguins)
+
+#the mean flipper length
+mean(penguins$flipper_length_mm, na.rm = TRUE)
+```
+
+Problem2:
+```{r}
+#random sample of size 10 in standard Normal distribution
+random_sample <- rnorm(10)
+#a logical vector indicating whether elements of the sample are greater than 0
+logical <- random_sample > 0
+#a character vector of length 10
+cha_vector <-letters[1:10]
+#a factor vector of length 10, with 3 different factor “levels”
+factor_vector <- factor(rep(c("Level 1", "Level 2", "Level 3"), length.out = 10))
+```
+
+```{r}
+#combine all the data
+combine <- data.frame(random_sample, logical, cha_vector, factor_vector)
+combine
+```
+
+```{r}
+#compute the mean
+mean(combine$random_sample)
+mean(combine$logical)
+mean(combine$cha_vector)
+mean(combine$factor_vector)
+```
+It seems like character vector and factor vector are not work while random sampel and logical vector work.
+
+```{r}
+#Aplly as.numeric to logical, character, and factor
+as.numeric(combine$logical)
+as.numeric(combine$cha_vector)
+as.numeric(combine$factor_vector)
+```
+The as.numeric turn the value in logical vector from TURE/FALSE to 1/0, and this is why the mean is working in logical vector as it compute the proportion of TURE
+The as.numeric convert NA in character vector because character cannot be directly transfer into numbers, and that's why the mean failed
+The as.numeric convert factor into numbers but failed in mean because mean cannot calculate factors.
+
